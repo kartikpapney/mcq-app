@@ -55,7 +55,7 @@ export async function POST(request: Request) {
         { role: "system", content: systemMessage },
         { role: "user", content: prompt }
       ],
-      model: "gpt-3.5-turbo-0125",
+      model: process.env.OPENAI_MODEL || "gpt-4o-mini",
       response_format: { type: "json_object" }
     });
 
